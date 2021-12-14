@@ -1,0 +1,57 @@
+id;edible;latin;name;toxic;link
+1;1;Amanita Caesarea;Amanite des Césars (Oronge);0;https://fr.wikipedia.org/wiki/Oronge
+2;1;Amanita Citrina;Amanite citrine;0;https://fr.wikipedia.org/wiki/Amanite_citrine
+3;0;Amanita Muscaria;Amanite tue-mouches (Fausse oronge);1;https://fr.wikipedia.org/wiki/Amanite_tue-mouches
+4;0;Amanita Phalloides;Amanite phalloïde (Calice de la mort);1;https://fr.wikipedia.org/wiki/Amanite_phallo%C3%AFde
+5;0;Amanita Pantherina;Amanite Panthère;1;https://fr.wikipedia.org/wiki/Amanite_panth%C3%A8re
+6;1;Amanita Vaginata;Amanite vaginée;0;https://fr.wikipedia.org/wiki/Amanite_vagin%C3%A9e
+7;1;Boletus Aereus;Cèpe bronzé;0;https://fr.wikipedia.org/wiki/Boletus_aereus
+8;0;Boletus Calopus;Bolet à beau pied;0;https://fr.wikipedia.org/wiki/Boletus_calopus
+9;1;Boletus Edulis;Cèpe de Bordeaux;0;https://fr.wikipedia.org/wiki/Boletus_edulis
+10;1;Boletus Lupinus;Bolet des loups;0;https://en.wikipedia.org/wiki/Rubroboletus_lupinus
+11;1;Boletus Regius;Bolet royal;0;https://fr.wikipedia.org/wiki/Bolet_royal
+12;1;Calocybe Gambosa;Tricholome de la Saint-Georges;0;https://fr.wikipedia.org/wiki/Tricholome_de_la_Saint-Georges
+13;1;Cantharellus Cibarius;Girolle (Chanterelle);0;https://fr.wikipedia.org/wiki/Girolle
+14;1;Cantharellus Lutescens;Chanterelle jaune (Craterelle);0;https://fr.wikipedia.org/wiki/Craterellus_lutescens
+15;1;Chroogomphus Rutilus;Gomphide rutilant;0;https://fr.wikipedia.org/wiki/Chroogomphus
+16;0;Clathus Ruber;Clathre rouge;0;https://fr.wikipedia.org/wiki/Clathrus_ruber
+17;0;Clavulina Cinerea;Clavaire cendrée;0;https://fr.wikipedia.org/wiki/Clavaire_cendr%C3%A9e
+18;1;Clitocybe Costata;Clitocybe côtelé;0;https://fr.wikipedia.org/wiki/Clitocybe
+19;1;Craterellus Cinereus;Girolle cendrée;0;https://fr.wikipedia.org/wiki/Cantharellus_cinereus
+20;1;Craterellus Cornucopioides;Trompette de la mort;0;https://fr.wikipedia.org/wiki/Trompette_de_la_mort
+21;0;Entoloma Lividum;Entolome livide;1;https://fr.wikipedia.org/wiki/Entoloma_sinuatum
+22;0;Gyromitra Esculenta;Fausse morille;1;https://fr.wikipedia.org/wiki/Gyromitra_esculenta
+23;1;Gyroporus Cyanescens;Bolet bleuissant;0;https://fr.wikipedia.org/wiki/Gyroporus_cyanescens
+24;1;Hebeloma Laterinum;Hébélome;0;https://fr.wikipedia.org/wiki/Hebeloma
+25;1;Helvella Crispa;Helvelle crépue;0;https://fr.wikipedia.org/wiki/Helvelle_cr%C3%A9pue
+26;0;Helvella Lacunosa;Helvelle lacuneuse;1;https://fr.wikipedia.org/wiki/Helvelle_lacuneuse
+27;1;Hydnum Albidum;Pied de mouton;0;https://fr.wikipedia.org/wiki/Pied-de-mouton
+28;0;Hydnum Rufescens;Hydne roussissant;0;https://fr.wikipedia.org/wiki/Hydnum_rufescens
+29;1;Hygrophorus Eburneus;Hygrophore blanc;0;https://fr.wikipedia.org/wiki/Hygrophorus_eburneus
+30;1;Hygrophorus Gliocyclus;Petit Paris;0;https://www.mycodb.fr/fiche.php?genre=Hygrophorus&espece=gliocyclus&source=list&filter=&numfiche=3469
+31;1;Hygrophorus Latitabundus;Hygrophore;0;https://fr.wikipedia.org/wiki/Hygrophorus
+32;1;Hygrophorus Marzuolus;Hygrophore de mars;0;https://www.mycodb.fr/fiche.php?genre=Hygrophorus&espece=marzuolus&source=list&filter=&numfiche=3483
+33;1;Hygrophorus Personii;Hygrophore dicolore;0;https://www.mycoleron.fr/fiche_champi_v2.php3?nom_genre=Hygrophorus&nom_espece=persoonii
+34;1;Hygrophorus Russula;Hygrophore russule;0;https://fr.wikipedia.org/wiki/Hygrophorus_russula
+35;1;Lactarius Deliciosus;Lactaire délicieux;0;https://fr.wikipedia.org/wiki/Lactaire_d%C3%A9licieux
+36;1;Lactarius Sanguifluus;Lactaire sanguin;0;https://fr.wikipedia.org/wiki/Lactaire_sanguin
+37;1;Lactarius Vinosus;Lactaire vineux;0;https://www.mycodb.fr/fiche.php?genre=Lactarius&espece=vinosus
+38;1;Laetiporus Sulphureus;Polypore soufré;0;https://fr.wikipedia.org/wiki/Polypore_soufr%C3%A9
+39;1;Lycoperdon Perlatum;Vesse-de-loup perlée;0;https://fr.wikipedia.org/wiki/Vesse-de-loup_perl%C3%A9e
+40;1;Macrolepiota Procera;Lépiote élevée;0;https://fr.wikipedia.org/wiki/Macrolepiota_procera#:~:text=La%20l%C3%A9piote%20%C3%A9lev%C3%A9e%20est%20un,une%20soupe%2C%20ou%20bien%20%C3%A9limin%C3%A9.
+41;1;Marasmius Oreades;Le marasme des Oréades;0;https://fr.wikipedia.org/wiki/Marasme_des_Or%C3%A9ades
+42;0;Melanoleuca Excissa;Mélanoleuque;0;https://fr.wikipedia.org/wiki/Melanoleuca
+43;1;Morchella Deliciosa;Morille délicieuse;0;https://fr.wikipedia.org/wiki/Morchella_deliciosa
+44;0;Omphalotus Olearius;Pleurote de l'olivier;1;https://fr.wikipedia.org/wiki/Pleurote_de_l%E2%80%99olivier
+45;0;Phallus Impudicus;Satyre puant;1;https://fr.wikipedia.org/wiki/Satyre_puant
+46;0;Rubroboletus Satanas;Bolet Satan;1;https://fr.wikipedia.org/wiki/Bolet_Satan
+47;1;Russula Aurea;Russule dorée;0;https://fr.wikipedia.org/wiki/Russule_dor%C3%A9e
+48;1;Russula Cyanoxantha;Russule charbonée;0;https://fr.wikipedia.org/wiki/Russule_charbonni%C3%A8re
+49;1;Russula Delica;Russule sans lait;0;https://www.mycodb.fr/fiche.php?genre=Russula&espece=delica
+50;0;Russula Hemetica;Russule hémétique;0;https://fr.wikipedia.org/wiki/Russule_%C3%A9m%C3%A9tique
+51;1;Russula Virescens;Russule verdoyante;0;https://fr.wikipedia.org/wiki/Russule_verdoyante
+52;1;Sparassis Crispa;Sparassis crépu;0;https://fr.wikipedia.org/wiki/Sparassis_cr%C3%A9pu
+53;1;Suillus Variegatus;Bolet moucheté;0;https://fr.wikipedia.org/wiki/Suillus_variegatus
+54;1;Tricholoma Equestre;Tricholome équestre (chevalier);0;https://fr.wikipedia.org/wiki/Tricholoma_equestre
+55;0;Tricholoma Sulphureum;Tricholome soufré;1;https://fr.wikipedia.org/wiki/Tricholoma_sulphureum
+56;1;Tricholoma Terreum;Petit-gris;0;https://fr.wikipedia.org/wiki/Tricholoma_terreum

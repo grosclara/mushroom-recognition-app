@@ -1,4 +1,5 @@
 import { InferenceSession } from "onnxruntime-react-native";
+import { TouchableOpacity, StyleSheet, Dimensions, View, Platform, Image } from "react-native";
 
 const modelPath = "../models/mushroom.onnx";
 
@@ -16,13 +17,18 @@ export interface MushroomDetails {
 // route on the server and fetches the top five
 // predictions made by ML/DL model
 export const getMushroomImagePrediction: (
-  photoUri: string
-) => Promise = (photoUri) => {
+  preprocessedUri: string
+) => Promise = (preprocessedUri) => {
   return new Promise(async (resolve, reject) => {
     try {
+      Image.getSize(preprocessedUri, (width, height) => {
+        console.log("preprocessedWidth", width)
+        console.log("preprocessedHeight", height)}
+      );
+
       const mushroom : MushroomDetails = {
         id: 3,
-        image: photoUri,
+        image: preprocessedUri,
         name: "Champilove",
         latinName: "Champignonus Lovinus",
         link: "https://fr.wikipedia.org/wiki/Chanterelle",

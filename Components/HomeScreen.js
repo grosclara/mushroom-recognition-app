@@ -14,13 +14,15 @@ import { getMushroomImagePrediction, MushroomDetails } from '../Services/Mushroo
 
 import { Avatar, Button, Card, Title, Paragraph, Chip, Badge } from 'react-native-paper';
 
+import { WebView } from 'react-native-webview';
+
 export default function HomeScreen () {
 	
 	const [hasPermission, setHasPermission] = useState(null);
   const isFocused = useIsFocused();
 
 	const bottomSheetRef = useRef(null);
-	const snapPoints = useMemo(() => ["10%", "80%"], []);
+	const snapPoints = useMemo(() => ["10%", "95%"], []);
 
   const [image, setImage] = useState(null);
   const [prediction, setPrediction] = useState({
@@ -39,16 +41,15 @@ export default function HomeScreen () {
 	if (hasPermission === false) { return <Text>No access to camera</Text>; }
 	if (hasPermission === null || !isFocused) { return <View />; }
 
+
   // Promise of classifying image
-  const recognizeImage = async (image: string) => {
+  const recognizeImage = async (image: string, preprocessedImage: string) => {
 
     // Module de chargement le temps que ça charge
 
     try {
       // Remove old predictions if any
-      await Promise.all([
-        console.debug("PredictImage"),
-        
+      await Promise.all([     
         // Reset prediction
         setPrediction({
           loaded: false,
@@ -59,15 +60,13 @@ export default function HomeScreen () {
       ]);
 
       // Call prediction service with image
-      const predictPayload = await getMushroomImagePrediction(image);
-      console.debug("predictPayload", predictPayload);
+      const predictPayload = await getMushroomImagePrediction(preprocessedImage);
       if (predictPayload !== null) {
         setPrediction({
           loaded: true,
           mushroomDetails: predictPayload.mushroomDetails,
           score: predictPayload.score,
         });
-        console.debug("PredictImage2", prediction);
       } else {
         return Alert.alert(
           "Ops",
@@ -79,7 +78,6 @@ export default function HomeScreen () {
       console.log(err.message);
     }
 
-    console.debug("PredictImage2", prediction);
     // Animate bottom sheet to cover whole screen
     bottomSheetRef.current?.snapToIndex(1);
   };
@@ -96,10 +94,11 @@ export default function HomeScreen () {
     	<BottomSheet ref={bottomSheetRef} index={0} snapPoints={snapPoints}  
         backgroundComponent={() =>
           <View style={styles.bottomSheetContainer}/>
-        }>
+        }
+        enableContentPanningGesture={false}>
         <BottomSheetScrollView
           contentContainerStyle={styles.scrollViewContainer}
-          showsVerticalScrollIndicator={false}
+          showsVerticalScrollIndicator={true}
         >
           <View style={styles.bottomSheetHeader}>
             <Text style={{fontSize: 20, fontWeight: "bold"}}>{"Attrapez les tous! 🍄"}</Text>
@@ -108,13 +107,14 @@ export default function HomeScreen () {
           { !prediction.loaded ? null : (
 
             <View style={styles.bottomSheetContent}>
-              <Card>
+              <Card style={{flex:0.5, marginTop: "7%", marginBottom: "7%"}}>
                 <Card.Title 
                   title={prediction.mushroomDetails.name} 
                   subtitle={prediction.mushroomDetails.latinName}
                   right={() => <Badge>{prediction.score}</Badge>}
                   rightStyle={{padding: 20}} />
-                <Card.Cover source={{ uri: prediction.mushroomDetails.image }} />
+                <Card.Cover source={{ uri: image }}/>
+                {/* <Card.Cover source={{ uri: prediction.mushroomDetails.image }} resizeMode='center'/> */}
                 <Card.Actions>
                   { !prediction.mushroomDetails.isToxic ? null : (
                     <Chip 
@@ -133,6 +133,13 @@ export default function HomeScreen () {
                     </Chip>
                   )}
                 </Card.Actions>
+              </Card>
+
+              <Card style={{flex:0.5}}>
+                <Card.Content style={{flex:1}}>
+                  <WebView source={{ uri: prediction.mushroomDetails.link }} scalesPageToFit={true}
+              scrollEnabled={true} />
+                </Card.Content>
               </Card>
 
             </View>            
@@ -166,23 +173,26 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    backgroundColor: '#ecf0f1'
+    backgroundColor: '#ecf0f1',
+    flex: 1
   },
   scrollViewContainer: {
-    display: "flex",
+    flex: 1,
     flexDirection: "column",
     justifyContent: "space-between",
     alignContent: "flex-start",
     padding: 8,
     width: "100%",
+
   },
   bottomSheetHeader: {
     // alignContent: "center",
     alignItems: "center",
     // justifyContent: "center",
-    paddingVertical: "0%",
+    paddingVertical: "-1%",
     // borderBottomWidth: 1,
     // borderBottomColor: "#C0C0C0",
+    flex:0.04
   },
 
   title: {
@@ -190,7 +200,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   bottomSheetContent: {
-    paddingVertical: "10%",
+    flex: 1,
   },
 
 });

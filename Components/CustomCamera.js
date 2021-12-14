@@ -1,14 +1,17 @@
 import React, { useRef, useState, useEffect} from "react";
 import { TouchableOpacity, StyleSheet, Dimensions, View, Platform } from "react-native";
 import { Camera } from "expo-camera";
+import BarcodeMask from 'react-native-barcode-mask';
 import { Ionicons } from '@expo/vector-icons';
+import { manipulateAsync, SaveFormat } from 'expo-image-manipulator';
+
 
 const { width, height } = Dimensions.get("window");
 const screenRatio = height / width;
 
 export type CameraProps = {
     hasPermissionCamera: boolean;
-    recognizeImage: (image: string) => void;
+    recognizeImage: (image: string, croppedImage: string) => void;
   };
 
 
@@ -18,62 +21,47 @@ const CustomCamera = ({
 }: CameraProps) => {
 
   const cameraRef = useRef(null)
-  const [ratio, setRatio] = useState('4:3');  // default is 4:3
-  const [isRatioSet, setIsRatioSet] =  useState(false);
-  const [imagePadding, setImagePadding] = useState(0);
+  // const [ratio, setRatio] = useState('4:3');  // default is 4:3
+  // const [isRatioSet, setIsRatioSet] =  useState(false);
+  // const [imagePadding, setImagePadding] = useState(0);
 
   const takePictureAsync = async () => {
     const picture = await cameraRef.current.takePictureAsync({
-      quality: 1,
+      quality: 0.3,
     });
     console.debug("takePicture", picture);
-    recognizeImage(picture.uri);
+    const preprocessed = await preprocess(picture)
+    recognizeImage(picture.uri, preprocessed.uri);
+  };
+
+  const preprocess = async (image) => {
+    console.log("width", width)
+    console.log("height", height)
+    const preprocessed = await manipulateAsync(
+      image.uri,
+      [
+        { crop: { 
+          height: 500, 
+          originX: image.width/2-500/2, 
+          originY: image.height/2-500/2, 
+          width: 500}
+        },
+        { resize: { 
+          height: 240,
+          width: 240}
+        }
+      ],
+      { compress: 1, format: SaveFormat.PNG }
+    );
+    console.log("preprocessed", preprocessed)
+    return preprocessed;
   };
 
   // On screen load, ask for permission to use the camera
   useEffect(() => {
     (async () => { 
-      let desiredRatio = '4:3';  // Start with the system default
-      // This issue only affects Android
-      if (Platform.OS === 'android') {
-        const ratios = await cameraRef.current.getSupportedRatiosAsync();
-        console.debug(ratios)
-
-        // Calculate the width/height of each of the supported camera ratios
-        // These width/height are measured in landscape mode
-        // find the ratio that is closest to the screen ratio without going over
-        let distances = {};
-        let realRatios = {};
-        let minDistance = null;
-        for (const ratio of ratios) {
-          const parts = ratio.split(':');
-          const realRatio = parseInt(parts[0]) / parseInt(parts[1]);
-          realRatios[ratio] = realRatio;
-          // ratio can't be taller than screen, so we don't want an abs()
-          const distance = screenRatio - realRatio; 
-          distances[ratio] = realRatio;
-          if (minDistance == null) {
-            minDistance = ratio;
-          } else {
-            if (distance >= 0 && distance < distances[minDistance]) {
-              minDistance = ratio;
-            }
-          }
-        }
-        // set the best match
-        desiredRatio = minDistance;
-        //  calculate the difference between the camera width and the screen height
-        const remainder = Math.floor(
-          (height - realRatios[desiredRatio] * width) / 2
-        );
-        // set the preview padding and preview ratio
-        setImagePadding(remainder);
-        setRatio(desiredRatio);
-        // Set a flag so we don't do this 
-        // calculation each time the screen refreshes
-        setIsRatioSet(true);
-        console.debug(ratio)
-      }
+      const sizes = await cameraRef.current. getAvailablePictureSizesAsync("16:9");
+      console.debug("pictureSizes", sizes)
     })();
     }, []);
 
@@ -82,7 +70,8 @@ const CustomCamera = ({
       style={styles.camera} 
       type={Camera.Constants.Type.back}
       ref={cameraRef}
-      ratio={ratio}
+      ratio="16:9"
+      pictureSize="1280x720"
 		>
       <View style={styles.buttonContainer}>
         <Ionicons style={styles.button}
@@ -92,6 +81,8 @@ const CustomCamera = ({
           onPress={takePictureAsync}
         />
       </View>
+
+      <BarcodeMask width={240} height={240} showAnimatedLine={false} outerMaskOpacity={0.1}/>
 
 		</Camera>
   );
