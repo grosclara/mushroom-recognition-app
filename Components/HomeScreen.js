@@ -18,11 +18,11 @@ import { WebView } from 'react-native-webview';
 
 export default function HomeScreen () {
 	
-	const [hasPermission, setHasPermission] = useState(null);
+  const [hasPermission, setHasPermission] = useState(null);
   const isFocused = useIsFocused();
 
-	const bottomSheetRef = useRef(null);
-	const snapPoints = useMemo(() => ["10%", "95%"], []);
+  const bottomSheetRef = useRef(null);
+  const snapPoints = useMemo(() => ["10%", "95%"], []);
 
   const [image, setImage] = useState(null);
   const [prediction, setPrediction] = useState({

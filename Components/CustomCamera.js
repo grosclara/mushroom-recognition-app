@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect} from "react";
-import { TouchableOpacity, StyleSheet, Dimensions, View, Platform } from "react-native";
+import { TouchableOpacity, StyleSheet, Dimensions, View, Platform, Button } from "react-native";
 import { Camera } from "expo-camera";
 import BarcodeMask from 'react-native-barcode-mask';
 import { Ionicons } from '@expo/vector-icons';
@@ -66,13 +66,15 @@ const CustomCamera = ({
     }, []);
 
   return (
-    <Camera 
-      style={styles.camera} 
+    <Camera
+      style={styles.camera}
       type={Camera.Constants.Type.back}
       ref={cameraRef}
       ratio="16:9"
       pictureSize="1280x720"
 		>
+      <BarcodeMask width={240} height={240} showAnimatedLine={false} outerMaskOpacity={0.1}/>
+
       <View style={styles.buttonContainer}>
         <Ionicons style={styles.button}
           name="camera" 
@@ -82,7 +84,6 @@ const CustomCamera = ({
         />
       </View>
 
-      <BarcodeMask width={240} height={240} showAnimatedLine={false} outerMaskOpacity={0.1}/>
 
 		</Camera>
   );
