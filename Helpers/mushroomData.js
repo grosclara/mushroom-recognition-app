@@ -1,3 +1,54 @@
+import * as FileSystem from 'expo-file-system';
+import MushroomItem from "../Components/MushroomItem";
+
+
+export interface MushroomDetails {
+  id: number,
+    image: string,
+    name: string,
+    latinName: string,
+    isEdible: boolean,
+    isToxic: boolean,
+    link: string,
+};
+
+export const loadMushroomDB: (dbPath: string) => Promise =
+  (dbPath) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      console.log(dbPath);
+      const dbString = await FileSystem.readAsStringAsync(dbPath, {
+        encoding: FileSystem.EncodingType.UTF8
+      });
+      const db_arr = dbString.split("\r\n");
+
+      const db = {};
+      for (let i = 0; i < db_arr.length; ++i) {
+        if (i == 0) {
+          continue;
+        }
+        const csv_line = db_arr[i].split(";");
+        const id = parseInt(csv_line[0], 10);
+        const mushroom : MushroomItem = {
+          id: id,
+          is_edible: !!parseInt(csv_line[1], 10),
+          latinName: csv_line[2],
+          name: csv_line[3],
+          isToxic: !!parseInt(csv_line[4], 10),
+          link: csv_line[5],
+          image: null,
+        };
+        db[id] = mushroom;
+
+      }
+
+      resolve(db);
+    } catch (err) {
+      reject(err);
+    }
+  })
+};
+
 export default data = [
   {
     id:181808,

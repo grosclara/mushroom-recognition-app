@@ -14,6 +14,7 @@ import BottomSheet, {
 import CustomCamera from './CustomCamera';
 import { Camera } from 'expo-camera';
 import { getMushroomImagePrediction, MushroomDetails } from '../Services/MushroomClassifier';
+import { loadMushroomDB } from "../Helpers/mushroomData";
 
 import { Avatar, Button, Card, Title, Paragraph, Chip, Badge } from 'react-native-paper';
 
@@ -21,6 +22,8 @@ import { WebView } from 'react-native-webview';
 
 const modelJson = require('../assets/models/mushroom.json');
 const modelWeights = require('../assets/models/mushroom_weights.bin');
+
+import mushroomDB from '../data/mushroomDB.json';
 
 export default function HomeScreen () {
 	
@@ -51,7 +54,7 @@ export default function HomeScreen () {
         await tf.loadGraphModel(bundleResourceIO(modelJson, modelWeights));
 
       setModel(loadedModel);
-      console.log("Model loaded");
+      console.log("Model loaded!");
 
 		})();
 	}, []);
@@ -77,7 +80,7 @@ export default function HomeScreen () {
       ]);
 
       // Call prediction service with image
-      const predictPayload = await getMushroomImagePrediction(preprocessedImage, model);
+      const predictPayload = await getMushroomImagePrediction(preprocessedImage, model, mushroomDB);
       if (predictPayload !== null) {
         setPrediction({
           loaded: true,

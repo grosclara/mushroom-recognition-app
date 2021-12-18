@@ -7,28 +7,16 @@ import * as mobilenet from '@tensorflow-models/mobilenet';
 // import '@tensorflow/tfjs-react-native';
 import { fetch, decodeJpeg, bundleResourceIO } from '@tensorflow/tfjs-react-native';
 
-import cat from '../assets/cat.jpeg'
-
-
-const modelPath = "champilove/models/mushroom.all.ort";
-
-export interface MushroomDetails {
-  id: number,
-  image: string,
-  name: string,
-  latinName: string,
-  isEdible: boolean,
-  isToxic: boolean,
-  link: string,
-};
+import { MushroomDetails } from '../Helpers/mushroomData'
 
 // getFlowerImagePrediction calls the "/predict"
 // route on the server and fetches the top five
 // predictions made by ML/DL model
 export const getMushroomImagePrediction: (
   preprocessedUri: string,
-  model
-) => Promise = (preprocessedUri, model) => {
+  model,
+  mushroomDB
+) => Promise = (preprocessedUri, model, mushroomDB) => {
   return new Promise(async (resolve, reject) => {
     try {
       if (model === null) {
@@ -45,20 +33,24 @@ export const getMushroomImagePrediction: (
 
       const prediction = await model.predict(imageTensor).softmax(-1);
 
-      console.log("Prediction: " + tf.argMax(prediction, -1) + "; Score: " + tf.max(prediction, -1));
+      const mushroomId = tf.argMax(prediction, -1).arraySync()[0];
+      const score = Math.floor(100 * tf.max(prediction, -1).arraySync()[0]);
+      const predictedMushroom = mushroomDB[mushroomId + 1];
+
+      console.log("Prediction: " + mushroomId + "; Score: " + score);
 
       const mushroom : MushroomDetails = {
-        id: 3,
+        id: mushroomId + 1,
         image: preprocessedUri,
-        name: "Champilove",
-        latinName: "Champignonus Lovinus",
-        link: "https://fr.wikipedia.org/wiki/Chanterelle",
-        isEdible: true,
-        isToxic: true
+        name: predictedMushroom['name'],
+        latinName: predictedMushroom['latin'],
+        link: predictedMushroom['link'],
+        isEdible: !!predictedMushroom['edible'],
+        isToxic: !!predictedMushroom['toxic']
       };
       resolve({
         mushroomDetails: mushroom,
-        score: 98
+        score: score
       });
     } catch (err) {
       reject(err);

@@ -1,0 +1,450 @@
+[
+  {
+    "id": 1,
+    "edible": 1,
+    "latin": "Amanita Caesarea",
+    "name": "Amanite des Césars (Oronge)",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Oronge"
+  },
+  {
+    "id": 2,
+    "edible": 1,
+    "latin": "Amanita Citrina",
+    "name": "Amanite citrine",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Amanite_citrine"
+  },
+  {
+    "id": 3,
+    "edible": 0,
+    "latin": "Amanita Muscaria",
+    "name": "Amanite tue-mouches (Fausse oronge)",
+    "toxic": 1,
+    "link": "https://fr.wikipedia.org/wiki/Amanite_tue-mouches"
+  },
+  {
+    "id": 4,
+    "edible": 0,
+    "latin": "Amanita Phalloides",
+    "name": "Amanite phalloïde (Calice de la mort)",
+    "toxic": 1,
+    "link": "https://fr.wikipedia.org/wiki/Amanite_phallo%C3%AFde"
+  },
+  {
+    "id": 5,
+    "edible": 0,
+    "latin": "Amanita Pantherina",
+    "name": "Amanite Panthère",
+    "toxic": 1,
+    "link": "https://fr.wikipedia.org/wiki/Amanite_panth%C3%A8re"
+  },
+  {
+    "id": 6,
+    "edible": 1,
+    "latin": "Amanita Vaginata",
+    "name": "Amanite vaginée",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Amanite_vagin%C3%A9e"
+  },
+  {
+    "id": 7,
+    "edible": 1,
+    "latin": "Boletus Aereus",
+    "name": "Cèpe bronzé",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Boletus_aereus"
+  },
+  {
+    "id": 8,
+    "edible": 0,
+    "latin": "Boletus Calopus",
+    "name": "Bolet à beau pied",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Boletus_calopus"
+  },
+  {
+    "id": 9,
+    "edible": 1,
+    "latin": "Boletus Edulis",
+    "name": "Cèpe de Bordeaux",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Boletus_edulis"
+  },
+  {
+    "id": 10,
+    "edible": 1,
+    "latin": "Boletus Lupinus",
+    "name": "Bolet des loups",
+    "toxic": 0,
+    "link": "https://en.wikipedia.org/wiki/Rubroboletus_lupinus"
+  },
+  {
+    "id": 11,
+    "edible": 1,
+    "latin": "Boletus Regius",
+    "name": "Bolet royal",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Bolet_royal"
+  },
+  {
+    "id": 12,
+    "edible": 1,
+    "latin": "Calocybe Gambosa",
+    "name": "Tricholome de la Saint-Georges",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Tricholome_de_la_Saint-Georges"
+  },
+  {
+    "id": 13,
+    "edible": 1,
+    "latin": "Cantharellus Cibarius",
+    "name": "Girolle (Chanterelle)",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Girolle"
+  },
+  {
+    "id": 14,
+    "edible": 1,
+    "latin": "Cantharellus Lutescens",
+    "name": "Chanterelle jaune (Craterelle)",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Craterellus_lutescens"
+  },
+  {
+    "id": 15,
+    "edible": 1,
+    "latin": "Chroogomphus Rutilus",
+    "name": "Gomphide rutilant",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Chroogomphus"
+  },
+  {
+    "id": 16,
+    "edible": 0,
+    "latin": "Clathus Ruber",
+    "name": "Clathre rouge",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Clathrus_ruber"
+  },
+  {
+    "id": 17,
+    "edible": 0,
+    "latin": "Clavulina Cinerea",
+    "name": "Clavaire cendrée",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Clavaire_cendr%C3%A9e"
+  },
+  {
+    "id": 18,
+    "edible": 1,
+    "latin": "Clitocybe Costata",
+    "name": "Clitocybe côtelé",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Clitocybe"
+  },
+  {
+    "id": 19,
+    "edible": 1,
+    "latin": "Craterellus Cinereus",
+    "name": "Girolle cendrée",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Cantharellus_cinereus"
+  },
+  {
+    "id": 20,
+    "edible": 1,
+    "latin": "Craterellus Cornucopioides",
+    "name": "Trompette de la mort",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Trompette_de_la_mort"
+  },
+  {
+    "id": 21,
+    "edible": 0,
+    "latin": "Entoloma Lividum",
+    "name": "Entolome livide",
+    "toxic": 1,
+    "link": "https://fr.wikipedia.org/wiki/Entoloma_sinuatum"
+  },
+  {
+    "id": 22,
+    "edible": 0,
+    "latin": "Gyromitra Esculenta",
+    "name": "Fausse morille",
+    "toxic": 1,
+    "link": "https://fr.wikipedia.org/wiki/Gyromitra_esculenta"
+  },
+  {
+    "id": 23,
+    "edible": 1,
+    "latin": "Gyroporus Cyanescens",
+    "name": "Bolet bleuissant",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Gyroporus_cyanescens"
+  },
+  {
+    "id": 24,
+    "edible": 1,
+    "latin": "Hebeloma Laterinum",
+    "name": "Hébélome",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Hebeloma"
+  },
+  {
+    "id": 25,
+    "edible": 1,
+    "latin": "Helvella Crispa",
+    "name": "Helvelle crépue",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Helvelle_cr%C3%A9pue"
+  },
+  {
+    "id": 26,
+    "edible": 0,
+    "latin": "Helvella Lacunosa",
+    "name": "Helvelle lacuneuse",
+    "toxic": 1,
+    "link": "https://fr.wikipedia.org/wiki/Helvelle_lacuneuse"
+  },
+  {
+    "id": 27,
+    "edible": 1,
+    "latin": "Hydnum Albidum",
+    "name": "Pied de mouton",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Pied-de-mouton"
+  },
+  {
+    "id": 28,
+    "edible": 0,
+    "latin": "Hydnum Rufescens",
+    "name": "Hydne roussissant",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Hydnum_rufescens"
+  },
+  {
+    "id": 29,
+    "edible": 1,
+    "latin": "Hygrophorus Eburneus",
+    "name": "Hygrophore blanc",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Hygrophorus_eburneus"
+  },
+  {
+    "id": 30,
+    "edible": 1,
+    "latin": "Hygrophorus Gliocyclus",
+    "name": "Petit Paris",
+    "toxic": 0,
+    "link": "https://www.mycodb.fr/fiche.php?genre=Hygrophorus&espece=gliocyclus&source=list&filter=&numfiche=3469"
+  },
+  {
+    "id": 31,
+    "edible": 1,
+    "latin": "Hygrophorus Latitabundus",
+    "name": "Hygrophore",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Hygrophorus"
+  },
+  {
+    "id": 32,
+    "edible": 1,
+    "latin": "Hygrophorus Marzuolus",
+    "name": "Hygrophore de mars",
+    "toxic": 0,
+    "link": "https://www.mycodb.fr/fiche.php?genre=Hygrophorus&espece=marzuolus&source=list&filter=&numfiche=3483"
+  },
+  {
+    "id": 33,
+    "edible": 1,
+    "latin": "Hygrophorus Personii",
+    "name": "Hygrophore dicolore",
+    "toxic": 0,
+    "link": "https://www.mycoleron.fr/fiche_champi_v2.php3?nom_genre=Hygrophorus&nom_espece=persoonii"
+  },
+  {
+    "id": 34,
+    "edible": 1,
+    "latin": "Hygrophorus Russula",
+    "name": "Hygrophore russule",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Hygrophorus_russula"
+  },
+  {
+    "id": 35,
+    "edible": 1,
+    "latin": "Lactarius Deliciosus",
+    "name": "Lactaire délicieux",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Lactaire_d%C3%A9licieux"
+  },
+  {
+    "id": 36,
+    "edible": 1,
+    "latin": "Lactarius Sanguifluus",
+    "name": "Lactaire sanguin",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Lactaire_sanguin"
+  },
+  {
+    "id": 37,
+    "edible": 1,
+    "latin": "Lactarius Vinosus",
+    "name": "Lactaire vineux",
+    "toxic": 0,
+    "link": "https://www.mycodb.fr/fiche.php?genre=Lactarius&espece=vinosus"
+  },
+  {
+    "id": 38,
+    "edible": 1,
+    "latin": "Laetiporus Sulphureus",
+    "name": "Polypore soufré",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Polypore_soufr%C3%A9"
+  },
+  {
+    "id": 39,
+    "edible": 1,
+    "latin": "Lycoperdon Perlatum",
+    "name": "Vesse-de-loup perlée",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Vesse-de-loup_perl%C3%A9e"
+  },
+  {
+    "id": 40,
+    "edible": 1,
+    "latin": "Macrolepiota Procera",
+    "name": "Lépiote élevée",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Macrolepiota_procera#:~:text=La%20l%C3%A9piote%20%C3%A9lev%C3%A9e%20est%20un,une%20soupe%2C%20ou%20bien%20%C3%A9limin%C3%A9."
+  },
+  {
+    "id": 41,
+    "edible": 1,
+    "latin": "Marasmius Oreades",
+    "name": "Le marasme des Oréades",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Marasme_des_Or%C3%A9ades"
+  },
+  {
+    "id": 42,
+    "edible": 0,
+    "latin": "Melanoleuca Excissa",
+    "name": "Mélanoleuque",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Melanoleuca"
+  },
+  {
+    "id": 43,
+    "edible": 1,
+    "latin": "Morchella Deliciosa",
+    "name": "Morille délicieuse",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Morchella_deliciosa"
+  },
+  {
+    "id": 44,
+    "edible": 0,
+    "latin": "Omphalotus Olearius",
+    "name": "Pleurote de l'olivier",
+    "toxic": 1,
+    "link": "https://fr.wikipedia.org/wiki/Pleurote_de_l%E2%80%99olivier"
+  },
+  {
+    "id": 45,
+    "edible": 0,
+    "latin": "Phallus Impudicus",
+    "name": "Satyre puant",
+    "toxic": 1,
+    "link": "https://fr.wikipedia.org/wiki/Satyre_puant"
+  },
+  {
+    "id": 46,
+    "edible": 0,
+    "latin": "Rubroboletus Satanas",
+    "name": "Bolet Satan",
+    "toxic": 1,
+    "link": "https://fr.wikipedia.org/wiki/Bolet_Satan"
+  },
+  {
+    "id": 47,
+    "edible": 1,
+    "latin": "Russula Aurea",
+    "name": "Russule dorée",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Russule_dor%C3%A9e"
+  },
+  {
+    "id": 48,
+    "edible": 1,
+    "latin": "Russula Cyanoxantha",
+    "name": "Russule charbonée",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Russule_charbonni%C3%A8re"
+  },
+  {
+    "id": 49,
+    "edible": 1,
+    "latin": "Russula Delica",
+    "name": "Russule sans lait",
+    "toxic": 0,
+    "link": "https://www.mycodb.fr/fiche.php?genre=Russula&espece=delica"
+  },
+  {
+    "id": 50,
+    "edible": 0,
+    "latin": "Russula Hemetica",
+    "name": "Russule hémétique",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Russule_%C3%A9m%C3%A9tique"
+  },
+  {
+    "id": 51,
+    "edible": 1,
+    "latin": "Russula Virescens",
+    "name": "Russule verdoyante",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Russule_verdoyante"
+  },
+  {
+    "id": 52,
+    "edible": 1,
+    "latin": "Sparassis Crispa",
+    "name": "Sparassis crépu",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Sparassis_cr%C3%A9pu"
+  },
+  {
+    "id": 53,
+    "edible": 1,
+    "latin": "Suillus Variegatus",
+    "name": "Bolet moucheté",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Suillus_variegatus"
+  },
+  {
+    "id": 54,
+    "edible": 1,
+    "latin": "Tricholoma Equestre",
+    "name": "Tricholome équestre (chevalier)",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Tricholoma_equestre"
+  },
+  {
+    "id": 55,
+    "edible": 0,
+    "latin": "Tricholoma Sulphureum",
+    "name": "Tricholome soufré",
+    "toxic": 1,
+    "link": "https://fr.wikipedia.org/wiki/Tricholoma_sulphureum"
+  },
+  {
+    "id": 56,
+    "edible": 1,
+    "latin": "Tricholoma Terreum",
+    "name": "Petit-gris",
+    "toxic": 0,
+    "link": "https://fr.wikipedia.org/wiki/Tricholoma_terreum"
+  }
+]
