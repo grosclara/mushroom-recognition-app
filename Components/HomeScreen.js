@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, TouchableOpacity, Alert, Image} from 'react-nat
 import { useIsFocused } from '@react-navigation/core';
 import { Ionicons } from '@expo/vector-icons';
 import "react-native-gesture-handler";
+
+import * as tf from '@tensorflow/tfjs';
+import { bundleResourceIO } from '@tensorflow/tfjs-react-native';
 import BottomSheet, {
   BottomSheetScrollView,
   BottomSheetFlatList,
@@ -15,6 +18,9 @@ import { getMushroomImagePrediction, MushroomDetails } from '../Services/Mushroo
 import { Avatar, Button, Card, Title, Paragraph, Chip, Badge } from 'react-native-paper';
 
 import { WebView } from 'react-native-webview';
+
+const modelJson = require('../assets/models/mushroom.json');
+const modelWeights = require('../assets/models/mushroom_weights.bin');
 
 export default function HomeScreen () {
 	
@@ -29,13 +35,24 @@ export default function HomeScreen () {
       loaded: false,
       mushroomDetails: null,
       score: 0
-  })
+  });
+
+  const [model, setModel] = useState(null);
 
   // Ask for Camera permissions
 	useEffect(() => {
 		(async () => {
 			const { status } = await Camera.requestCameraPermissionsAsync();
 			setHasPermission(status === 'granted');
+
+      await tf.ready();
+      console.log('TF ready!');
+      const loadedModel =
+        await tf.loadGraphModel(bundleResourceIO(modelJson, modelWeights));
+
+      setModel(loadedModel);
+      console.log("Model loaded");
+
 		})();
 	}, []);
 	if (hasPermission === false) { return <Text>No access to camera</Text>; }
@@ -60,7 +77,7 @@ export default function HomeScreen () {
       ]);
 
       // Call prediction service with image
-      const predictPayload = await getMushroomImagePrediction(preprocessedImage);
+      const predictPayload = await getMushroomImagePrediction(preprocessedImage, model);
       if (predictPayload !== null) {
         setPrediction({
           loaded: true,
@@ -101,7 +118,7 @@ export default function HomeScreen () {
           showsVerticalScrollIndicator={true}
         >
           <View style={styles.bottomSheetHeader}>
-            <Text style={{fontSize: 20, fontWeight: "bold"}}>{"Attrapez les tous! 🍄"}</Text>
+            <Text style={{fontSize: 20, fontWeight: "bold"}}>{"Attrape les tous Papinou! 🍄"}</Text>
           </View>
 
           { !prediction.loaded ? null : (

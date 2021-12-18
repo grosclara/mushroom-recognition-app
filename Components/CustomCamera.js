@@ -29,14 +29,11 @@ const CustomCamera = ({
     const picture = await cameraRef.current.takePictureAsync({
       quality: 0.3,
     });
-    console.debug("takePicture", picture);
-    const preprocessed = await preprocess(picture)
+    const preprocessed = await preprocess(picture);
     recognizeImage(picture.uri, preprocessed.uri);
   };
 
   const preprocess = async (image) => {
-    console.log("width", width)
-    console.log("height", height)
     const preprocessed = await manipulateAsync(
       image.uri,
       [
@@ -47,13 +44,12 @@ const CustomCamera = ({
           width: 500}
         },
         { resize: { 
-          height: 240,
-          width: 240}
+          height: 224,
+          width: 224}
         }
       ],
-      { compress: 1, format: SaveFormat.PNG }
+      { compress: 1, format: SaveFormat.JPEG }
     );
-    console.log("preprocessed", preprocessed)
     return preprocessed;
   };
 
@@ -77,9 +73,9 @@ const CustomCamera = ({
 
       <View style={styles.buttonContainer}>
         <Ionicons style={styles.button}
-          name="camera" 
-          size={32} 
-          color="white" 
+          name="camera"
+          size={32}
+          color="white"
           onPress={takePictureAsync}
         />
       </View>
