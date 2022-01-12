@@ -29,9 +29,13 @@ export const getMushroomImagePrediction: (
       });
       const imgBuffer = tf.util.encodeString(imgB64, 'base64').buffer;
       const raw = new Uint8Array(imgBuffer);
-      const imageTensor = tf.cast(decodeJpeg(raw).reshape([1, 3, 224, 224]), 'float32');
+      // console.log(decodeJpeg(raw).arraySync())
+      const imageTensor = tf.cast(decodeJpeg(raw).reshape([1, 224, 224, 3]), 'float32');
+      // console.log(imageTensor.arraySync())
 
-      const prediction = await model.predict(imageTensor).softmax(-1);
+      const imageTensorNormalized = imageTensor.div(127.5).sub(1);
+
+      const prediction = await model.predict(imageTensorNormalized).softmax(-1);
 
       const mushroomId = tf.argMax(prediction, -1).arraySync()[0];
       const score = Math.floor(100 * tf.max(prediction, -1).arraySync()[0]);

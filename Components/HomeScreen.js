@@ -20,8 +20,8 @@ import { Avatar, Button, Card, Title, Paragraph, Chip, Badge } from 'react-nativ
 
 import { WebView } from 'react-native-webview';
 
-const modelJson = require('../assets/models/mushroom.json');
-const modelWeights = require('../assets/models/mushroom_weights.bin');
+const modelJson = require('../assets/models/mushroom_js/model.json');
+const modelWeights = require('../assets/models/mushroom_js/model.bin');
 
 import mushroomDB from '../data/mushroomDB.json';
 
@@ -51,7 +51,7 @@ export default function HomeScreen () {
       await tf.ready();
       console.log('TF ready!');
       const loadedModel =
-        await tf.loadGraphModel(bundleResourceIO(modelJson, modelWeights));
+        await tf.loadLayersModel(bundleResourceIO(modelJson, modelWeights));
 
       setModel(loadedModel);
       console.log("Model loaded!");
